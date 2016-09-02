@@ -2,10 +2,10 @@
 
 namespace SMP
 {
-	class CircleBuffer
+	class CircBufferFixed
 	{
 	private:
-		struct HeaderInfo
+		struct Header
 		{
 			size_t MSG_ID;
 			size_t MSG_LEN;
@@ -13,7 +13,7 @@ namespace SMP
 		};
 	public:
 		//Con
-		CircleBuffer(
+		CircBufferFixed(
 			LPCWSTR SHRD_BFR,          // unique name
 			const size_t& BFR_SIZE,    // size of the whole filemap
 			const bool& isProducer,    // is this buffer going to be used as producer
